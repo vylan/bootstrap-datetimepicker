@@ -1,6 +1,6 @@
 /*!
  * Datetimepicker for Bootstrap 3
- * version : 4.17.47
+ * version : 4.17.48
  * https://github.com/Eonasdan/bootstrap-datetimepicker/
  */
 .bootstrap-datetimepicker-widget {
@@ -11,6 +11,7 @@
   margin: 2px 0;
   padding: 4px;
   width: 19em;
+  color: #222;
 }
 @media (min-width: 768px) {
   .bootstrap-datetimepicker-widget.dropdown-menu.timepicker-sbs {

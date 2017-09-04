@@ -1,4 +1,4 @@
-/*! version : 4.17.47
+/*! version : 4.17.48
  =========================================================
  bootstrap-datetimejs
  https://github.com/Eonasdan/bootstrap-datetimepicker
@@ -2328,6 +2328,7 @@
         };
 
         // initializing element and component attributes
+        input = element;
         if (element.is('input')) {
             input = element;
         } else {
@@ -2339,13 +2340,10 @@
             }
         }
 
-        if (element.hasClass('input-group')) {
-            // in case there is more then one 'input-group-addon' Issue #48
-            if (element.find('.datepickerbutton').length === 0) {
-                component = element.find('.input-group-addon');
-            } else {
-                component = element.find('.datepickerbutton');
-            }
+        if (element.find('.datepickerbutton').length === 0) {
+            component = element.find('span');
+        } else {
+            component = element.find('.datepickerbutton');
         }
 
         if (!options.inline && !input.is('input')) {
@@ -2634,3 +2632,4 @@
 
     return $.fn.datetimepicker;
 }));
+
