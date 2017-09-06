@@ -408,7 +408,6 @@
                     vertical = options.widgetPositioning.vertical,
                     horizontal = options.widgetPositioning.horizontal,
                     parent;
-
                 if (options.widgetParent) {
                     parent = options.widgetParent.append(widget);
                 } else if (element.is('input')) {
@@ -465,8 +464,10 @@
                 }
 
                 widget.css({
-                    top: vertical === 'top' ? 'auto' : position.top + element.outerHeight(),
-                    bottom: vertical === 'top' ? parent.outerHeight() - (parent === element ? 0 : position.top) : 'auto',
+                    top: vertical === 'top' ? position.top - 305 : position.top + element.outerHeight() + 10,
+                    bottom: 'auto',
+                    //top: vertical === 'top' ? 'auto' : position.top + element.outerHeight(),
+                    // bottom: vertical === 'top' ? parent.outerHeight() - (parent === element ? 0 : position.top) : 'auto',
                     left: horizontal === 'left' ? (parent === element ? 0 : position.left) : 'auto',
                     right: horizontal === 'left' ? 'auto' : parent.outerWidth() - element.outerWidth() - (parent === element ? 0 : position.left)
                 });
@@ -2632,4 +2633,5 @@
 
     return $.fn.datetimepicker;
 }));
+
 
